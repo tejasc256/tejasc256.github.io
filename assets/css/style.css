@@ -172,6 +172,91 @@ header {
   margin-bottom: 0;
 }
 
+/* -- Timeline -- */
+.timeline {
+  position: relative;
+  margin: 24px 0 48px;
+  padding-left: 24px;
+  border-left: 2px solid var(--line);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 48px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.timeline-date {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.timeline-content h3 {
+  margin: 0 0 2px;
+  font-size: 1.15rem;
+}
+
+.timeline-content .role {
+  display: block;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.timeline-content ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+.timeline-content li {
+  margin-bottom: 6px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tags span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.education h3 {
+  font-size: 1rem;
+  margin: 0 0 12px;
+}
+
+.education p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0 0 12px;
+}
+
 /* -- Responsive -- */
 @media (max-width: 640px) {
   .hero h1 { font-size: 2rem; }
