@@ -5,9 +5,7 @@ window.experienceData = [
     role: "Software Engineer",
     bullets: [
       "Delivered a flagship competitor-ad discovery platform for 500+ users, engineering the frontend masonry UI, backend Meta/TikTok REST APIs, and an LLM-based classification engine.",
-      "Eliminated 15–20 minute worst-case wait times for paid-tier users by engineering a platform-wide Celery priority-queue system processing ~200 AI-generation jobs daily.",
       "Built production LLM reliability infrastructure — Redis-backed concurrency semaphores, jittered exponential backoff, and a circuit breaker across the model gateway.",
-      "Secured internal cloud infrastructure against SSRF and DNS-rebinding vulnerabilities in the image-ingestion pipeline.",
     ],
     tags: ["LLM Reliability", "Celery", "Redis", "MCP", "SSRF Hardening"],
   },
@@ -17,7 +15,6 @@ window.experienceData = [
     role: "Software Engineer",
     bullets: [
       "Proposed and independently built custom Model Context Protocol (MCP) servers for GitHub and Google Workspace, enabling AI agents to autonomously triage internal repository issues and saving ~40 engineering hours weekly.",
-      "Deployed a Snowflake MCP integration allowing non-technical stakeholders to run natural-language analytical queries against institutional data.",
       "Owned end-to-end development of internal university platforms, building a Flask REST API and the corresponding React/TypeScript frontend.",
     ],
     tags: ["MCP", "Snowflake", "Flask", "React", "TypeScript"],
@@ -29,8 +26,6 @@ window.experienceData = [
     bullets: [
       "Closed out a recurring SEV2 of 200+ stuck order workflows by tracing the root cause to unconfirmed Stripe refund failures, shipping workflow-level terminal-state handling across Ordering and Payments Platform.",
       "Shipped an event-driven Prime auto-refund service from scratch (API Gateway, ECS, Lambda, SNS/SQS, DynamoDB), recovering $500K+ in annual customer value.",
-      "Spearheaded the payments-domain integration for an org-wide centralized config store, negotiating adoption roadmaps with owners of 40+ downstream services.",
-      "Served as payments workstream lead for the Amazon Ireland launch, delivering the first production charge and refund within days of kickoff.",
     ],
     tags: ["Java", "Event-Driven Architecture", "AWS", "DynamoDB"],
   },
@@ -41,8 +36,6 @@ window.experienceData = [
     bullets: [
       "Mapped cross-service dependencies for 40+ away-teams into a standardized integration playbook, slashing the Belgium launch from 8 months to 2 months and enabling a 2-engineer team to deliver Ireland in 2 weeks.",
       "Implemented a seller disbursement payment method end-to-end using AWS CDK; scaled to 1M+ active users processing ~$50M/month in transaction volume with zero availability incidents.",
-      "Designed a dual-pipeline PII data leak detection service covering 20+ Tier-1 services using AWS Athena and AWS Batch.",
-      "Built deep expertise across 10+ European payment flows including SCA/3DS authentication, local payment methods, refunds, and disputes.",
     ],
     tags: ["Java", "AWS CDK", "Athena", "Payments"],
   },
