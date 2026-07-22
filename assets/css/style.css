@@ -299,6 +299,19 @@ header {
   margin: 0 0 8px;
 }
 
+/* -- Contact -- */
+#contact p {
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.contact-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
 /* -- Responsive -- */
 @media (max-width: 640px) {
   .hero h1 { font-size: 2rem; }
