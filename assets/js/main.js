@@ -1,53 +1,58 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const timeline = document.getElementById("timeline");
-  if (timeline) {
-    (window.experienceData || []).forEach((item) => {
-      const el = document.createElement("div");
-      el.className = "timeline-item";
-      el.innerHTML = `
-        <span class="timeline-date">${item.date}</span>
-        <div class="timeline-content">
-          <h3>${item.title}</h3>
-          <span class="role">${item.role}</span>
-          <ul>${item.bullets.map((b) => `<li>${b}</li>`).join("")}</ul>
-          <div class="tags">${item.tags.map((t) => `<span>${t}</span>`).join("")}</div>
+function renderChapter(chapterId) {
+  const chapter = window.chaptersData[chapterId];
+  if (!chapter) return;
+
+  let html = `<h1 class="chapter-title">${chapter.title}</h1>`;
+  html += `<p class="chapter-intro">${chapter.intro}</p>`;
+
+  chapter.subsections.forEach((sub) => {
+    html += `<div class="subsection">`;
+    html += `<div class="subsection-title">${sub.title}</div>`;
+    html += `<div class="subsection-content">`;
+
+    if (sub.content) {
+      html += `<p>${sub.content}</p>`;
+    }
+
+    if (sub.projects) {
+      html += `<div class="project-list">`;
+      sub.projects.forEach((proj) => {
+        html += `<div class="project-item">`;
+        html += `<div class="project-title">${proj.title}</div>`;
+        html += `<div class="tags">${proj.tags.map((t) => `<span>${t}</span>`).join("")}</div>`;
+        html += `</div>`;
+      });
+      html += `</div>`;
+    }
+
+    if (sub.skillsPreview) {
+      html += `<div class="skills-list">${window.coreSkillsData.map((s) => `<span>${s}</span>`).join("")}</div>`;
+    }
+
+    if (sub.contact) {
+      html += `
+        <div class="contact-links">
+          <a href="mailto:tejaschoudhary256@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/tejaskc" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.github.com/tejasc256" target="_blank" rel="noopener">GitHub</a>
         </div>
       `;
-      timeline.appendChild(el);
-    });
-  }
+    }
 
-  const projects = document.getElementById("projects-grid");
-  if (projects) {
-    (window.projectsData || []).forEach((item) => {
-      const el = document.createElement("div");
-      el.className = "project-card";
-      el.innerHTML = `
-        <h3>${item.title}</h3>
-        <p>${item.description}</p>
-        <div class="tags">${item.tags.map((t) => `<span>${t}</span>`).join("")}</div>
-      `;
-      projects.appendChild(el);
-    });
-  }
+    html += `</div></div>`;
+  });
 
-  const core = document.getElementById("core-skills");
-  if (core) {
-    core.innerHTML = (window.coreSkillsData || [])
-      .map((t) => `<span>${t}</span>`)
-      .join("");
-  }
+  document.getElementById("chapter-content").innerHTML = html;
+}
 
-  const skills = document.getElementById("skills-grid");
-  if (skills) {
-    (window.skillsData || []).forEach((group) => {
-      const el = document.createElement("div");
-      el.className = "skill-group";
-      el.innerHTML = `
-        <h3>${group.group}</h3>
-        <div class="tags">${group.items.map((t) => `<span>${t}</span>`).join("")}</div>
-      `;
-      skills.appendChild(el);
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".chapter-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".chapter-btn").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderChapter(btn.dataset.chapter);
     });
-  }
+  });
+
+  renderChapter("how-i-think");
 });

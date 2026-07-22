@@ -8,137 +8,29 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
     <header>
-        <div class="container nav">
-            <a href="#" class="logo">Tejas Choudhary</a>
-            <nav class="nav-links">
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
-                <a class="btn btn-primary" href="assets/resume/tejas-choudhary-resume.pdf" download>Resume</a>
-            </nav>
-        </div>
+        <div class="logo">Tejas Choudhary</div>
+        <a class="resume-link" href="assets/resume/tejas-choudhary-resume.pdf" download>Resume</a>
     </header>
 
-    <main>
+    <div class="main-container">
+        <nav class="chapters-nav">
+            <button class="chapter-btn active" data-chapter="how-i-think">How I Think</button>
+            <button class="chapter-btn" data-chapter="what-i-built">What I've Built</button>
+            <button class="chapter-btn" data-chapter="whats-next">What's Next</button>
+        </nav>
 
-        <section class="hero">
-            <div class="container hero-grid">
-                <div class="hero-copy">
-                    <p class="kicker">3+ years of professional software development experience</p>
-                    <h1>Software Engineer</h1>
-                    <p class="tagline">
-                        I build event-driven, AWS-native systems at scale — and lately, agentic AI
-                        infrastructure in production. Comfortable with ambiguity; I'd rather figure it out
-                        hands-on than wait for a fully-specified brief.
-                    </p>
-                    <div class="actions">
-                        <a class="btn btn-primary" href="#projects">See my work</a>
-                        <a class="btn btn-ghost" href="assets/resume/tejas-choudhary-resume.pdf" download>Download resume</a>
-                    </div>
-                </div>
-                <aside class="hero-glance">
-                    <span class="glance-label">At a glance</span>
-                    <ul class="glance-list">
-                        <li><span class="glance-value">NYU MSCS</span><span class="glance-desc">Courant Institute</span></li>
-                        <li><span class="glance-value">2 markets</span><span class="glance-desc">Amazon payments launches (Belgium &amp; Ireland)</span></li>
-                        <li><span class="glance-value">1M+ users</span><span class="glance-desc">served by systems I shipped</span></li>
-                        <li><span class="glance-value">14</span><span class="glance-desc">shipped projects</span></li>
-                    </ul>
-                    <div class="glance-now">
-                        <span class="glance-label">Right now</span>
-                        <p>Building LLM reliability infra &amp; agentic AI workflows in production.</p>
-                    </div>
-                    <div class="glance-links">
-                        <a href="mailto:tejaschoudhary256@gmail.com" aria-label="Email">Email</a>
-                        <a href="https://www.linkedin.com/in/tejaskc" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-                        <a href="https://www.github.com/tejasc256" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-                    </div>
-                </aside>
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="container">
-                <p class="section-number">01</p>
-                <span class="eyebrow">About</span>
-                <div class="about-body">
-                    <p>
-                        I'm a software engineer with 3+ years across Amazon (SDE I &rarr; SDE II) and an AI
-                        ad-tech startup, plus an NYU MSCS (Courant Institute). I've shipped production
-                        services processing $50M/month in transactions, re-architected pipelines under live
-                        incidents, and compressed multi-month international launches down to days.
-                    </p>
-                    <p>
-                        What I actually enjoy is the moment a system is unfamiliar and slightly on fire —
-                        tracing a bug nobody else could pin down, standing up infrastructure that didn't
-                        exist yet, or picking up a new stack because the problem demanded it. Lately that's
-                        meant building LLM reliability infrastructure and agentic AI workflows in
-                        production, on top of the distributed-systems and event-driven-architecture
-                        foundation from payments work at scale.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience">
-            <div class="container">
-                <p class="section-number">02</p>
-                <span class="eyebrow">Experience</span>
-                <div class="timeline" id="timeline"></div>
-                <div class="education">
-                    <h3>Education</h3>
-                    <p><strong>M.S. Computer Science</strong> — New York University, Courant Institute of Mathematical Sciences · Aug 2024 – May 2026<br>
-                    Relevant coursework: Distributed Systems, Machine Learning, GPUs, Advanced Database Systems</p>
-                    <p><strong>B.Tech. Computer Science &amp; Engineering</strong> — National Institute of Technology Karnataka · Jul 2017 – May 2021</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <div class="container">
-                <p class="section-number">03</p>
-                <span class="eyebrow">Projects</span>
-                <div class="projects-grid" id="projects-grid"></div>
-            </div>
-        </section>
-
-        <section id="skills">
-            <div class="container">
-                <p class="section-number">04</p>
-                <span class="eyebrow">Skills</span>
-                <div class="core-skills" id="core-skills"></div>
-                <div class="skills-grid" id="skills-grid"></div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <div class="container">
-                <p class="section-number">05</p>
-                <span class="eyebrow">Contact</span>
-                <p class="contact-lead">Reach out — I'm always happy to talk shop or hear about interesting problems.</p>
-                <div class="contact-links">
-                    <a class="btn btn-primary" href="mailto:tejaschoudhary256@gmail.com">Email</a>
-                    <a class="btn btn-ghost" href="https://www.linkedin.com/in/tejaskc" target="_blank" rel="noopener">LinkedIn</a>
-                    <a class="btn btn-ghost" href="https://www.github.com/tejasc256" target="_blank" rel="noopener">GitHub</a>
-                </div>
-            </div>
-        </section>
-
-    </main>
+        <div class="chapter-content" id="chapter-content"></div>
+    </div>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Tejas Choudhary. Built from scratch.</p>
-        </div>
+        <p>&copy; 2026 Tejas Choudhary</p>
     </footer>
 
     <script src="assets/js/data.js"></script>
