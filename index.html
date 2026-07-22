@@ -3,38 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Tejas C - MSCS Student & Software Engineer">
-    <title>Tejas C | Software Engineer</title>
-    
-    <!-- Using Inter font for a clean, digital look -->
+    <meta name="description" content="Tejas Choudhary - Software Engineer">
+    <title>Tejas Choudhary | Software Engineer</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Reset and Main CSS -->
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
     <header>
         <div class="container nav">
-            <a href="#" class="logo">TEJAS C.</a>
+            <a href="#" class="logo">Tejas Choudhary</a>
             <nav class="nav-links">
-                <a href="#">Resume</a>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+                <a class="btn" href="assets/resume/tejas-choudhary-resume.pdf" download>Resume</a>
             </nav>
         </div>
     </header>
 
-    <main class="container">
-        
-        <!-- Timeline Section -->
-        <section id="experience" class="timeline-section">
-            <!-- Added top margin to title for spacing -->
-            <h2 style="margin-bottom: 2rem; margin-top: 1rem;">Journey</h2>
-            
-            <div class="timeline" id="timeline-container">
-                <!-- Timeline items will be injected here by JS -->
+    <main>
+
+        <section class="hero">
+            <div class="container">
+                <h1>Tejas Choudhary</h1>
+                <p class="tagline">
+                    Software engineer building event-driven, AWS-native systems at scale — and, lately,
+                    agentic AI infrastructure in production. NYU MSCS. I like stepping into ambiguity and
+                    figuring out the rest as I go.
+                </p>
+                <div class="actions">
+                    <a class="btn btn-primary" href="#projects">See my work</a>
+                    <a class="btn" href="assets/resume/tejas-choudhary-resume.pdf" download>Download resume</a>
+                </div>
             </div>
         </section>
 
@@ -42,51 +49,9 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Tejas C. All Rights Reserved.</p>
-            <p style="opacity: 0.6; margin-top: 8px;">Designed & Built from scratch.</p>
+            <p>&copy; 2026 Tejas Choudhary. Built from scratch.</p>
         </div>
     </footer>
-
-    <script src="js/timelineData.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const container = document.getElementById('timeline-container');
-            const data = window.timelineData || [];
-
-            data.forEach(item => {
-                // Create timeline item div
-                const timelineItem = document.createElement('div');
-                timelineItem.className = 'timeline-item';
-
-                // Generate tags HTML
-                const tagsHtml = item.tags && item.tags.length > 0 
-                    ? `<div class="tech-stack">${item.tags.map(tag => `<span>${tag}</span>`).join(' ')}</div>` 
-                    : '';
-
-                // Format description (handle array for bullets or string)
-                let descriptionHtml = '';
-                if (Array.isArray(item.description)) {
-                    descriptionHtml = `<ul style="margin: 0; padding-left: 20px; color: var(--muted); list-style-type: disc;">
-                        ${item.description.map(desc => `<li style="margin-bottom: 6px;">${desc}</li>`).join('')}
-                    </ul>`;
-                } else {
-                    descriptionHtml = `<p>${item.description}</p>`;
-                }
-
-                timelineItem.innerHTML = `
-                    <span class="timeline-date">${item.date}</span>
-                    <div class="timeline-content">
-                        <h3>${item.title}</h3>
-                        <span class="role">${item.role}</span>
-                        ${descriptionHtml}
-                        ${tagsHtml}
-                    </div>
-                `;
-
-                container.appendChild(timelineItem);
-            });
-        });
-    </script>
 
 </body>
 </html>
