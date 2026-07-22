@@ -31,6 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const core = document.getElementById("core-skills");
+  if (core) {
+    core.innerHTML = (window.coreSkillsData || [])
+      .map((t) => `<span>${t}</span>`)
+      .join("");
+  }
+
   const skills = document.getElementById("skills-grid");
   if (skills) {
     (window.skillsData || []).forEach((group) => {

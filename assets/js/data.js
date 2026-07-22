@@ -74,6 +74,10 @@ window.projectsData = [
   },
 ];
 
+window.coreSkillsData = [
+  "Python", "Java", "TypeScript", "AWS", "Distributed Systems", "LLM / Agentic AI",
+];
+
 window.skillsData = [
   { group: "Languages", items: ["Python", "Java", "TypeScript", "JavaScript", "C++", "SQL", "Scala", "Bash"] },
   { group: "Frameworks", items: ["React", "Flask", "Node.js", "Spring Boot", "REST APIs", "CUDA", "OpenMP"] },
