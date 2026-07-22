@@ -283,6 +283,22 @@ header {
   margin: 0;
 }
 
+/* -- Skills -- */
+.skills-grid {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skill-group h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+
 /* -- Responsive -- */
 @media (max-width: 640px) {
   .hero h1 { font-size: 2rem; }
