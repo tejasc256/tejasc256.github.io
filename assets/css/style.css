@@ -160,6 +160,18 @@ header {
   flex-wrap: wrap;
 }
 
+/* -- About -- */
+.about p {
+  max-width: 65ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin: 0 0 16px;
+}
+
+.about p:last-child {
+  margin-bottom: 0;
+}
+
 /* -- Responsive -- */
 @media (max-width: 640px) {
   .hero h1 { font-size: 2rem; }
