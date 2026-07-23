@@ -4,40 +4,57 @@ window.experienceData = [
     title: "AdsgencyAI",
     role: "Software Engineer",
     bullets: [
-      "Delivered a flagship competitor-ad discovery platform for 500+ users, engineering the frontend masonry UI, backend Meta/TikTok REST APIs, and an LLM-based classification engine.",
-      "Built production LLM reliability infrastructure — Redis-backed concurrency semaphores, jittered exponential backoff, and a circuit breaker across the model gateway.",
+      "Delivered a flagship competitor-ad discovery platform for 500+ users, engineering the full stack: frontend masonry UI, backend Meta/TikTok REST APIs, and an LLM-based classification engine.",
+      "Engineered production LLM reliability infrastructure — Redis-backed concurrency semaphores, jittered exponential backoff, circuit breaker across model gateway; platform now handles ~200 AI-generation jobs daily reliably.",
+      "Re-architected production incident response pipeline from synchronous to queue-first (Celery), adding retry-with-backoff, idempotency guards, and failure-mode handling.",
+      "Hardened image-ingestion pipeline against infrastructure vulnerabilities with defense-in-depth, thread-safe secure connection pool, and strict certificate verification.",
+      "Redesigned unbounded LLM API call into asynchronous semaphore-capped worker pool, eliminating 5–15 minute first-load hang and delivering instant fallback responses.",
+      "Engineered backend foundation for visual discovery by integrating TikTok and Meta Ads APIs; built unified data normalizer, caching layer, and pagination system.",
+      "Enhanced search reliability by implementing lazily-triggered pagination with cross-page cache deduplication, ensuring users receive at least 15 unique, high-quality creatives per query.",
+      "Fixed Redis cache bypass affecting 31 LangGraph agent nodes and consolidated duplicated LLM fallback logic copy-pasted across 27 files onto single shared handler.",
+      "Fixed critical frontend and authentication bugs including Roku OAuth stale connection handling and silent token-refresh failures.",
     ],
-    tags: ["LLM Reliability", "Celery", "Redis", "MCP", "SSRF Hardening"],
+    tags: ["LLM Reliability", "Celery", "Redis", "MCP", "Circuit Breaker", "Concurrency Control"],
   },
   {
     date: "May 2025 – May 2026",
     title: "NYU Information Technology",
     role: "Software Engineer",
     bullets: [
-      "Proposed and independently built custom Model Context Protocol (MCP) servers for GitHub and Google Workspace, enabling AI agents to autonomously triage internal repository issues and saving ~40 engineering hours weekly.",
-      "Owned end-to-end development of internal university platforms, building a Flask REST API and the corresponding React/TypeScript frontend.",
+      "Proposed and independently built custom Model Context Protocol (MCP) servers for GitHub and Google Workspace—enabling AI agents to autonomously triage and resolve internal repository issues, saving ~40 engineering hours weekly.",
+      "Deployed Snowflake MCP integration allowing non-technical university stakeholders to run natural-language analytical queries against institutional data; extended with RAG layer using pgvector and Claude API.",
+      "Owned end-to-end development of internal university platforms, building Flask REST API handling hundreds of daily requests and corresponding React/TypeScript frontend.",
+      "Implemented WCAG accessibility compliance across React UI (verified with Axe DevTools) and introduced client-side fuzzy search using Fuse.js for better usability.",
+      "Built streaming LLM response interface in React using Server-Sent Events (SSE).",
     ],
-    tags: ["MCP", "Snowflake", "Flask", "React", "TypeScript"],
+    tags: ["MCP", "Snowflake", "Flask", "React", "TypeScript", "pgvector", "RAG"],
   },
   {
     date: "Oct 2023 – Jul 2024",
     title: "Amazon",
     role: "Software Development Engineer II",
     bullets: [
-      "Closed out a recurring SEV2 of 200+ stuck order workflows by tracing the root cause to unconfirmed Stripe refund failures, shipping workflow-level terminal-state handling across Ordering and Payments Platform.",
-      "Shipped an event-driven Prime auto-refund service from scratch (API Gateway, ECS, Lambda, SNS/SQS, DynamoDB), recovering $500K+ in annual customer value.",
+      "Closed out a recurring SEV2 affecting 200+ stuck order workflows by tracing root cause to Stripe only confirming successful refunds—not failures. Shipped workflow-level terminal-state handling across Ordering and Payments Platform despite strict cross-service change-approval bar.",
+      "Shipped event-driven Prime auto-refund service from scratch (API Gateway, ECS, Lambda, SNS/SQS, DynamoDB), recovering ~$500K+ in annual customer value and eliminating 30,000+ annual customer contacts.",
+      "Spearheaded payments-domain integration for org-wide centralized config store, standardizing legacy hardcoded parameters into single scalable schema; negotiated adoption roadmaps with 40+ downstream service owners.",
+      "Conducted 200+ peer code reviews and led design reviews introducing event-driven architecture patterns (Saga, Outbox, event sourcing), establishing new engineering standards across payments organization.",
+      "Served as payments workstream lead for Amazon Ireland launch; coordinated 40+ service migration across payments, retail, checkout, disbursements, and subscriptions.",
+      "Diagnosed and resolved payment transaction race condition where simultaneous updates had no synchronization; designed locking mechanism from scratch to serialize concurrent updates safely.",
     ],
-    tags: ["Java", "Event-Driven Architecture", "AWS", "DynamoDB"],
+    tags: ["Java", "Event-Driven Architecture", "AWS", "DynamoDB", "System Design"],
   },
   {
     date: "Jul 2021 – Sep 2023",
     title: "Amazon",
     role: "Software Development Engineer I",
     bullets: [
-      "Mapped cross-service dependencies for 40+ away-teams into a standardized integration playbook, slashing the Belgium launch from 8 months to 2 months and enabling a 2-engineer team to deliver Ireland in 2 weeks.",
-      "Implemented a seller disbursement payment method end-to-end using AWS CDK; scaled to 1M+ active users processing ~$50M/month in transaction volume with zero availability incidents.",
+      "Accelerated marketplace payments launches globally by mapping cross-service dependencies for 40+ away-teams into standardized integration playbook; framework slashed Belgium launch from 8 months to 2 months and enabled 2-engineer team to deliver Ireland in 2 weeks.",
+      "Implemented seller disbursement payment method end-to-end using AWS CDK; scaled to 1M+ active users processing ~$50M/month in transaction volume with zero availability incidents.",
+      "Built deep expertise across 10+ European payment flows including SCA/3DS authentication, local payment methods, refunds, and disputes.",
+      "Designed dual-pipeline PII data leak detection service covering 20+ Tier-1 services using AWS Athena and AWS Batch, surfacing and remediating real data leakage in legacy codebases.",
+      "Mentored 2 interns through full delivery of PII auditing tool from architecture design to onboarding high-traffic services.",
     ],
-    tags: ["Java", "AWS CDK", "Athena", "Payments"],
+    tags: ["Java", "AWS CDK", "Athena", "Payments", "AWS Batch"],
   },
 ];
 
@@ -46,11 +63,6 @@ window.projectsData = [
     title: "Distributed Collaborative Whiteboard (ATProto)",
     description: "Decentralized collaborative whiteboard using Bluesky DID authentication, implementing concurrent conflict-resolution strategies (atomic CAS vs. vector clocks).",
     tags: ["ATProto", "Distributed Systems", "Conflict Resolution"],
-  },
-  {
-    title: "Agentic Code Review System",
-    description: "Multi-agent system using LangChain, pgvector, and the Claude API where a planner decomposes issues and a coder generates PRs via RAG-based similarity search.",
-    tags: ["LangChain", "pgvector", "Claude API", "RAG"],
   },
   {
     title: "RAG-Powered Institutional Knowledge Assistant",
@@ -75,7 +87,7 @@ window.projectsData = [
 ];
 
 window.coreSkillsData = [
-  "Python", "Java", "TypeScript", "AWS", "Distributed Systems", "LLM / Agentic AI",
+  "Python", "Java", "TypeScript", "AWS", "Distributed Systems", "LLM Reliability",
 ];
 
 window.skillsData = [
@@ -131,7 +143,6 @@ window.chaptersData = {
         projects: [
           { title: "LLM Reliability Infrastructure", tags: ["Redis", "Circuit Breaker", "Concurrency Control", "Production"] },
           { title: "Model Context Protocol Servers", tags: ["MCP", "Claude API", "Autonomous Agents"] },
-          { title: "Agentic Code Review System", tags: ["LangChain", "pgvector", "Multi-Agent", "RAG"] },
         ],
       },
       {
