@@ -86,7 +86,9 @@ window.skillsData = [
   { group: "Architecture", items: ["Event-Driven Architecture", "Saga Pattern", "Outbox Pattern", "Circuit Breaker", "Microservices"] },
 ];
 
-// Narrative-first structure: chapters are the primary axis, system-type subsections nest within.
+// Narrative-first structure: chapters are the primary axis, system-type subsections
+// nest within. Subsections render as cards (title + snippet); clicking a card opens
+// a modal with the full content.
 window.chaptersData = {
   "how-i-think": {
     title: "How I Think",
@@ -94,14 +96,17 @@ window.chaptersData = {
     subsections: [
       {
         title: "Hands-On in Ambiguity",
+        snippet: "I thrive when systems are unfamiliar and slightly on fire.",
         content: "I thrive when a system is unfamiliar and slightly on fire. Tracing a bug nobody else could pin down, standing up infrastructure that didn't exist, or picking up a new stack because the problem demanded it — that's where I do my best work. This approach has proven itself across event-driven payments systems, LLM infrastructure, and distributed algorithm design.",
       },
       {
         title: "Systems Thinking at Scale",
+        snippet: "Thinking in dependencies, failure modes, and architectural constraints.",
         content: "Three years at Amazon processing $50M/month in transactions taught me to think in dependencies, failure modes, and architectural constraints. I don't ship features in isolation; I think about cross-service impact, graceful degradation, and what happens when the system catches fire. That discipline carries forward into everything I build.",
       },
       {
         title: "Build, Learn, Repeat",
+        snippet: "Learning fastest through hands-on iteration, not spec documents.",
         content: "I learn fastest by building. Whether it's LLM reliability infrastructure, distributed conflict resolution, or GPU-accelerated pipelines, hands-on iteration beats spec documents. I'd rather figure it out than wait for a fully-specified brief. The outcome is a comfort with ambiguity and unfamiliar domains that becomes a strength on hard problems.",
       },
     ],
@@ -112,6 +117,7 @@ window.chaptersData = {
     subsections: [
       {
         title: "Payments & Event-Driven Scale",
+        snippet: "Event-driven Prime auto-refund service scaling to 1M+ users.",
         content: "Amazon Payments (SDE I → SDE II, Jul 2021 – Jul 2024). Designed and shipped an event-driven Prime auto-refund service from scratch (API Gateway, ECS, Lambda, SNS/SQS, DynamoDB), scaling to 1M+ active users and $50M/month transaction volume with zero availability incidents. Mapped cross-service dependencies for 40+ teams, compressing the Belgium launch from 8 months to 2 months and enabling a 2-engineer team to deliver Ireland in 2 weeks.",
         projects: [
           { title: "Prime Auto-Refund Service", tags: ["Java", "Event-Driven", "AWS", "DynamoDB", "Lambda"] },
@@ -120,6 +126,7 @@ window.chaptersData = {
       },
       {
         title: "LLM Reliability & Agentic Systems",
+        snippet: "Production-grade infrastructure for AI agents and language models.",
         content: "Recent work building production-grade infrastructure for AI agents and language models. At AdsgencyAI, engineered LLM reliability infrastructure (Redis-backed concurrency semaphores, circuit breaker, jittered exponential backoff) protecting multi-agent workflows. At NYU, designed and built Model Context Protocol servers for GitHub and Google Workspace, enabling AI agents to autonomously triage issues and saving ~40 engineering hours weekly.",
         projects: [
           { title: "LLM Reliability Infrastructure", tags: ["Redis", "Circuit Breaker", "Concurrency Control", "Production"] },
@@ -129,6 +136,7 @@ window.chaptersData = {
       },
       {
         title: "Distributed Systems & Concurrency",
+        snippet: "Concurrency, distributed protocols, and low-level optimization work.",
         content: "Foundational systems work exploring concurrency, distributed protocols, and low-level optimization. Designed S2Hash — a hybrid locking strategy reducing lock overhead by 128x while retaining 95% throughput on a 64-core AMD EPYC cluster. Built a GPU-accelerated k-mer counter achieving a 2.1x memory throughput improvement through Nsight Compute profiling. Implemented a distributed collaborative whiteboard using ATProto with conflict-resolution strategies (CAS vs. vector clocks).",
         projects: [
           { title: "Multicore Hash Table (S2Hash)", tags: ["C++", "OpenMP", "Lock-Free", "128x improvement"] },
@@ -138,6 +146,7 @@ window.chaptersData = {
       },
       {
         title: "Data Pipelines & ML",
+        snippet: "Real-time pipelines and machine learning systems end-to-end.",
         content: "Real-time pipelines and machine learning systems built end-to-end. RAG-powered knowledge assistant combining pgvector similarity search with BM25 keyword filtering. Transit time prediction system ingesting REST APIs into a PostgreSQL feature store, training spatially partitioned XGBoost models per NYC grid zone.",
         projects: [
           { title: "RAG Knowledge Assistant", tags: ["pgvector", "Flask", "BM25", "Dense + Keyword"] },
@@ -152,19 +161,23 @@ window.chaptersData = {
     subsections: [
       {
         title: "LLM Reliability in Production",
+        snippet: "Making models reliable, composable, and safe at scale.",
         content: "The frontier isn't just training better models — it's making them reliable, composable, and safe at scale. Building systems that orchestrate multi-agent workflows, handle failures gracefully, and integrate seamlessly into existing infrastructure. This combines systems thinking from distributed work with the emergent possibilities of AI.",
       },
       {
         title: "Core Strengths",
+        snippet: "Distributed systems, event-driven architecture, AWS, and agentic AI.",
         content: "Distributed systems, event-driven architecture, AWS infrastructure, LLM reliability, and agentic AI are where I operate best. But the thread running through all of it is comfort with complexity and the ability to ship under ambiguity.",
         skillsPreview: true,
       },
       {
         title: "Education",
+        snippet: "M.S. from NYU Courant Institute, B.Tech. from NIT Karnataka.",
         content: "<strong>M.S. Computer Science</strong> — New York University, Courant Institute of Mathematical Sciences (Aug 2024 – May 2026)<br>Relevant coursework: Distributed Systems, Machine Learning, GPUs, Advanced Database Systems<br><br><strong>B.Tech. Computer Science &amp; Engineering</strong> — National Institute of Technology Karnataka (Jul 2017 – May 2021)",
       },
       {
         title: "Get in Touch",
+        snippet: "Always happy to talk shop or hear interesting problems.",
         content: "I'm always happy to talk shop or hear about interesting problems.",
         contact: true,
       },

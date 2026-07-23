@@ -8,29 +8,41 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
     <header>
-        <div class="logo">Tejas Choudhary</div>
-        <a class="resume-link" href="assets/resume/tejas-choudhary-resume.pdf" download>Resume</a>
+        <div class="header-content">
+            <div class="logo">Tejas Choudhary</div>
+        </div>
     </header>
 
-    <div class="main-container">
-        <nav class="chapters-nav">
-            <button class="chapter-btn active" data-chapter="how-i-think">How I Think</button>
-            <button class="chapter-btn" data-chapter="what-i-built">What I've Built</button>
-            <button class="chapter-btn" data-chapter="whats-next">What's Next</button>
-        </nav>
+    <nav class="tabs-nav">
+        <div class="tabs-content">
+            <button class="tab active" data-chapter="how-i-think">How I Think</button>
+            <button class="tab" data-chapter="what-i-built">What I've Built</button>
+            <button class="tab" data-chapter="whats-next">What's Next</button>
+        </div>
+    </nav>
 
-        <div class="chapter-content" id="chapter-content"></div>
+    <main class="content-area">
+        <div class="content-container" id="chapter-content"></div>
+    </main>
+
+    <div class="modal-overlay" id="subsection-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close-btn">&#10005;</button>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Tejas Choudhary</p>
+        <div class="footer-content">
+            <p>&copy; 2026 Tejas Choudhary</p>
+        </div>
     </footer>
 
     <script src="assets/js/data.js"></script>
