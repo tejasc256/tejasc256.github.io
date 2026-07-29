@@ -40,7 +40,10 @@ function openSubsectionModal(chapterKey, subsectionIdx) {
   let html = `<h2 class="modal-title">${sub.title}</h2><div class="modal-body">`;
 
   if (sub.content) {
-    html += `<p>${sub.content}</p>`;
+    html += sub.content
+      .split("\n\n")
+      .map((para) => `<p>${para}</p>`)
+      .join("");
   }
 
   if (sub.projects) {
