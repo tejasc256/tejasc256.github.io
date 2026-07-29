@@ -33,6 +33,20 @@ function renderChapter(chapterId) {
   });
 }
 
+function renderParagraph(para) {
+  const lines = para.split("\n");
+  const bulletStart = lines.findIndex((line) => line.startsWith("- "));
+
+  if (bulletStart === -1) {
+    return `<p>${lines.join(" ")}</p>`;
+  }
+
+  const lead = lines.slice(0, bulletStart).join(" ");
+  const items = lines.slice(bulletStart).map((line) => `<li>${line.slice(2)}</li>`).join("");
+  const leadHtml = lead ? `<p>${lead}</p>` : "";
+  return `${leadHtml}<ul class="modal-list">${items}</ul>`;
+}
+
 function openSubsectionModal(chapterKey, subsectionIdx) {
   const chapter = window.chaptersData[chapterKey];
   const sub = chapter.subsections[subsectionIdx];
@@ -42,7 +56,7 @@ function openSubsectionModal(chapterKey, subsectionIdx) {
   if (sub.content) {
     html += sub.content
       .split("\n\n")
-      .map((para) => `<p>${para}</p>`)
+      .map((para) => renderParagraph(para))
       .join("");
   }
 

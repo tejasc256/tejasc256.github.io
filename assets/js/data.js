@@ -200,7 +200,7 @@ window.chaptersData = {
       {
         title: "Get in Touch",
         snippet: "Always happy to talk shop or hear interesting problems.",
-        content: "Happy to talk about production LLM infrastructure, distributed systems and payments, incident response, or just a good technical problem. Reach out — full-time, consulting, or just a conversation.\n\n<strong>Contact:</strong>\n- Email: tejaschoudhary256@gmail.com\n- Phone: (551) 362-7539\n- LinkedIn: https://www.linkedin.com/in/tejaskc\n- GitHub: https://www.github.com/tejasc256",
+        content: "Happy to talk about production LLM infrastructure, distributed systems and payments, incident response, or just a good technical problem. Reach out — full-time, consulting, or just a conversation.",
         contact: true,
       },
       {

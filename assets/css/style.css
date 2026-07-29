@@ -305,6 +305,23 @@ header {
   font-weight: 700;
 }
 
+.modal-list {
+  margin: 0 0 16px;
+  padding-left: 20px;
+}
+
+.modal-list:last-child {
+  margin-bottom: 0;
+}
+
+.modal-list li {
+  margin-bottom: 6px;
+}
+
+.modal-list li:last-child {
+  margin-bottom: 0;
+}
+
 .modal-projects {
   margin-top: 32px;
 }
