@@ -88,6 +88,7 @@ a { color: inherit; }
 .hero {
     padding: 110px 48px 90px;
     max-width: 900px;
+    margin: 0 auto;
 }
 
 .breadcrumb { color: var(--muted); font-size: 13px; margin-bottom: 22px; }
@@ -127,6 +128,7 @@ a { color: inherit; }
 .section {
     padding: 60px 48px 90px;
     max-width: 900px;
+    margin: 0 auto;
     border-top: 1px solid var(--border);
 }
 
