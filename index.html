@@ -8,44 +8,161 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <header>
-        <div class="header-content">
-            <div class="logo">Tejas Choudhary</div>
-        </div>
-    </header>
-
-    <nav class="tabs-nav">
-        <div class="tabs-content">
-            <button class="tab active" data-chapter="how-i-think">How I Think</button>
-            <button class="tab" data-chapter="what-i-built">What I've Built</button>
-            <button class="tab" data-chapter="whats-next">What's Next</button>
-        </div>
-    </nav>
-
-    <main class="content-area">
-        <div class="content-container" id="chapter-content"></div>
-    </main>
-
-    <div class="modal-overlay" id="subsection-modal">
-        <div class="modal-content">
-            <button class="modal-close" id="modal-close-btn">&#10005;</button>
-            <div class="modal-body" id="modal-body"></div>
-        </div>
+    <div class="topbar">
+        <span class="mono logo">● tejasc256.github.io</span>
+        <nav class="mono topnav">
+            <a href="#solve">solve</a>
+            <a href="#bring">bring</a>
+            <a href="#excite">excite</a>
+            <a href="#clock">off-clock</a>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☾</button>
+            <a class="linkedin-link" href="https://linkedin.com/in/tejaskc">linkedin →</a>
+        </nav>
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Tejas Choudhary</p>
-        </div>
-    </footer>
+    <section class="hero">
+        <div class="mono breadcrumb">tejasc256.github.io / commit history / all branches</div>
+        <h1 class="mono hero-title">Tejas Choudhary<span class="cursor">_</span></h1>
+        <p class="hero-tagline">Curiosity that doesn't stop at "done."</p>
+        <p class="hero-subtext">Ex-Amazon, now researching high-performance databases at NYU.</p>
+    </section>
 
-    <script src="assets/js/data.js"></script>
+    <section class="section" id="solve">
+        <div class="mono eyebrow">01 / HOW I SOLVE PROBLEMS</div>
+        <h2>Root cause, not the nearest patch.</h2>
+        <p class="section-intro">The pattern in my best work: other engineers had already tried, and stalled. Here's what changed when I picked it up.</p>
+
+        <div class="commit-list">
+            <div class="commit-card">
+                <div class="mono commit-label">commit · Amazon, production payments</div>
+                <div class="commit-title">A recurring incident everyone had already tried to fix</div>
+                <p class="commit-body">Stuck order workflows kept piling up after prior attempts had stalled. I didn't reach for a workaround — I traced it to an upstream data-confirmation gap and shipped proper terminal-state handling across a large shared codebase, navigating Amazon's strict multi-team approval process for shared payment flows the whole way through. It stopped recurring.</p>
+            </div>
+            <div class="commit-card">
+                <div class="mono commit-label">commit · Amazon, from scratch</div>
+                <div class="commit-title">Built the refund service that shouldn't have needed a human</div>
+                <p class="commit-body">Designed and shipped an event-driven Prime auto-refund service from zero — API Gateway, ECS, Lambda, SNS/SQS, DynamoDB. It recovered $500K+ in annual customer value and eliminated 30,000+ annual customer contacts by resolving refunds before anyone had to ask.</p>
+            </div>
+            <div class="commit-card">
+                <div class="mono commit-label">commit · Amazon, cross-org</div>
+                <div class="commit-title">Turned an 8-month launch into a 2-week one</div>
+                <p class="commit-body">Built a standardized cross-team launch playbook spanning 100+ changes across 30+ teams, mapping exactly what every dependent service needed to do and why. It cut the Belgium payments launch from 8 months to 2, let a 2-engineer team ship the Ireland launch in 2 weeks, and was later adopted by MENA, LATAM, and APAC teams launching in their own markets.</p>
+            </div>
+            <div class="commit-card">
+                <div class="mono commit-label">commit · NYU, AI infra</div>
+                <div class="commit-title">Gave AI agents the access they needed to actually help</div>
+                <p class="commit-body">Proposed and independently built custom MCP servers for GitHub and Google Workspace so AI agents could autonomously triage and resolve internal repository issues — no one asked for this, I saw the bottleneck and built the bridge. It's saving roughly 40 engineering hours a week.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="bring">
+        <div class="mono eyebrow">02 / WHAT I BRING</div>
+        <h2>Quiet leverage, on teams and in code.</h2>
+        <div class="bring-grid">
+            <div class="bring-card">
+                <div class="mono bring-label">$ grep -r "scale"</div>
+                <p>Authored the AWS CDK infra for a seller disbursement path that scaled to 1M+ active users and ~$50M/month in transaction volume — with zero availability incidents.</p>
+            </div>
+            <div class="bring-card">
+                <div class="mono bring-label">$ grep -r "ownership"</div>
+                <p>Known for closing out problems other engineers had already attempted and stalled on — from live production incidents to years-old cross-team bottlenecks nobody wanted to own.</p>
+            </div>
+            <div class="bring-card">
+                <div class="mono bring-label">$ grep -r "leverage"</div>
+                <p>Spearheaded an org-wide centralized configuration store, standardizing hardcoded parameters into one schema and negotiating adoption with 40+ downstream service owners.</p>
+            </div>
+            <div class="bring-card">
+                <div class="mono bring-label">$ grep -r "mentorship"</div>
+                <p>Designed a dual-pipeline PII leak-detection service across 20+ Tier-1 services on AWS Athena and Batch, mentoring 2 interns through it end-to-end and surfacing real data leaks in legacy code along the way.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="excite">
+        <div class="mono eyebrow">03 / WHAT EXCITES ME</div>
+        <h2>The edges, mostly.</h2>
+        <p class="section-intro">Distributed systems that have to survive real failure, and agentic AI that has to survive real ambiguity. Both punish sloppy thinking the same satisfying way.</p>
+        <div class="excite-list">
+            <div class="excite-row">
+                <span class="mono excite-tag">always-on</span>
+                <div><span class="excite-title">Agentic AI &amp; MCP</span><span class="excite-desc"> — building Model Context Protocol servers and LangGraph orchestration so agents can act on real systems, not just talk about them.</span></div>
+            </div>
+            <div class="excite-row">
+                <span class="mono excite-tag">deep-dive</span>
+                <div><span class="excite-title">High-performance databases</span><span class="excite-desc"> — spelunking through production key-value stores like Badger to understand LSM-trees and WiscKey's key/value separation firsthand, not from a slide deck.</span></div>
+            </div>
+            <div class="excite-row">
+                <span class="mono excite-tag">systems</span>
+                <div><span class="excite-title">S2Hash — a hybrid-locking hash table</span><span class="excite-desc"> — designed a C++/OpenMP concurrency strategy that cut lock overhead 128x while holding 95% of fine-grained throughput, tested to near-linear scaling across 64 cores under adversarial contention.</span></div>
+            </div>
+            <div class="excite-row">
+                <span class="mono excite-tag">ml/infra</span>
+                <div><span class="excite-title">MTA transit time prediction</span><span class="excite-desc"> — wired live MTA BusTime and TomTom traffic feeds into a spatial XGBoost pipeline beating city-wide baselines, shipped full-stack to production in 8 weeks.</span></div>
+            </div>
+            <div class="excite-row excite-row-last">
+                <span class="mono excite-tag">gpu</span>
+                <div><span class="excite-title">GPU-accelerated k-mer counter</span><span class="excite-desc"> — built a two-stage CUDA pipeline (GPU partitioning → GPU counting/compaction) through six iterations, profiling with Nsight Compute to land a 2.1x memory-throughput improvement.</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="clock">
+        <div class="mono eyebrow">04 / OFF THE CLOCK</div>
+        <h2>The same restlessness, aimed elsewhere.</h2>
+        <p class="section-intro">I pick things up because starting from zero is the part I like most.</p>
+        <div class="clock-grid">
+            <div class="clock-card">
+                <div class="mono clock-label">table</div>
+                <div class="clock-text">Pool — the one I take most seriously</div>
+            </div>
+            <div class="clock-card">
+                <div class="mono clock-label">rhythm</div>
+                <div class="clock-text">Cajón &amp; keyboard</div>
+            </div>
+            <div class="clock-card">
+                <div class="mono clock-label">reflex</div>
+                <div class="clock-text">Table tennis, badminton</div>
+            </div>
+            <div class="clock-card clock-card-wide">
+                <div class="mono clock-label">in progress</div>
+                <div class="clock-text">Learning to sing — humbling in the exact same way debugging is</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="mono eyebrow eyebrow-muted">EDUCATION</div>
+        <div class="education-list">
+            <div class="education-item">
+                <div class="education-title">M.S. Computer Science — NYU, Courant Institute</div>
+                <div class="education-meta">Aug 2024 – May 2026 · GPA 3.9</div>
+                <div class="education-detail">Distributed Systems, Advanced Database Systems, GPUs, Machine Learning, Big Data Application Development, Fundamental Algorithms</div>
+            </div>
+            <div class="education-item">
+                <div class="education-title">B.Tech. Computer Science &amp; Engineering — NIT Karnataka</div>
+                <div class="education-meta">Jul 2017 – May 2021</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+        <div class="mono eyebrow eyebrow-muted">EOF</div>
+        <h2>That's the log. Let's talk.</h2>
+        <p class="section-intro">If any of this resonates, find the rest here.</p>
+        <div class="contact-links">
+            <a class="mono contact-link contact-link-accent" href="https://linkedin.com/in/tejaskc">→ linkedin</a>
+            <a class="mono contact-link" href="https://github.com/tejasc256">→ github</a>
+            <a class="mono contact-link" href="mailto:tejaschoudhary256@gmail.com">→ email</a>
+        </div>
+    </section>
+
     <script src="assets/js/main.js"></script>
 
 </body>
